@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-
+import SignUpModal from "../Auth/SignUpModal";
 function PricingCards(){
+        const [open, setOpen] = React.useState(false);
+        const handleClickOpen = () => {
+          setOpen(true);
+        };
 const Carddetails=[
 {
 'head':'Essentials',
@@ -72,6 +76,7 @@ const Carddetails=[
 }
 ]
 return(
+    <>
 <Main>
     <Head>
         <Cards>
@@ -98,14 +103,20 @@ return(
             )
             })}
             </Pointdiv>
-            <Free>Start a free trial*</Free>
+            <div>
+            <Free onClick={handleClickOpen}>Start a free trial*</Free>
+            <SignUpModal open={open} setOpen={setOpen}/>
+      </div>
             <Demo>Get a demo</Demo>
             </Card>
         )
         })}
         </Cards>
+
     </Head>
 </Main>
+
+      </>
 )
 }
 
@@ -213,6 +224,7 @@ margin-top:10px;
 width:90%;
 font-size:18px;
 margin-left:-5px;
+cursor:pointer;
 `
 const Demo=styled.button`
 background-color:white;

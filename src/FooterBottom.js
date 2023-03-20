@@ -8,7 +8,7 @@ return(
 <Main>
 <Head>
 <div>
-<Heading>© Podium Corp Inc. 2023</Heading>
+<Heading>© Notifi Corp Inc. 2023</Heading>
 </div>
 <div>
 <Details>Sitemap | Terms & Conditions | Privacy | Vulnerability Policy | CCPA
