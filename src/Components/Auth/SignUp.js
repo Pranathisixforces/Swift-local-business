@@ -31,8 +31,8 @@ return res
 }
 }
 const onChangeEmail = (e) => {
-    // let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
-    // reg.test(e.target.value) ? setisvalid(true):setisvalid(false)
+    let reg = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w\w+)+$/;
+    if(reg.test(e.target.value)){setisvalid(true)}
     setEmail(e.target.value)
 }
 const onChangePassword = (e) => {
