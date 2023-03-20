@@ -1,23 +1,11 @@
 import axios from "axios";
 import { urlFor } from "./Urls";
-// import  get  from 'lodash/get'
-
-
 export class NetworkOps {
-
   async getToken() {
     const token =  localStorage.getItem('token')
-    // console.log(token,"token")
-    // const session=token?JSON.parse(token):null
-    // console.log(session,"token")
-
     return token ? ` ${token}` : ""
   }
-
   async setHeaders(options) {
-
-  // const headerOverrides = get(options, "headerOverrides", {})
-
     const request = {
       headers: {
         'Access-Control-Allow-Origin': '*' ,
@@ -28,7 +16,6 @@ export class NetworkOps {
     console.log(request,"request")
     return request
   }
-
   get = async (url,options) => {
     try {
 
@@ -55,7 +42,6 @@ export class NetworkOps {
     if (response.status === 401 && response.message === 'Invalid token') {
     }
   }
-
   post = async (url, data, options) => {
     try {
 
@@ -70,11 +56,10 @@ export class NetworkOps {
     } catch (error) {
 
       const { response } = error
-      const { ...errorObject } = response // take everything but 'request'
+      const { ...errorObject } = response
       this.handleError(errorObject.data)
       return errorObject.data
     }
-
   }
   patch = async (url, data, options) => {
     try {
@@ -90,12 +75,11 @@ export class NetworkOps {
     } catch (error) {
 
       const { response } = error
-      const { request, ...errorObject } = response // take everything but 'request'
+      const { request, ...errorObject } = response
       this.handleError(errorObject.data)
       return errorObject.data
     }
   }
-
   put = async (url, data, options) => {
     try {
 
@@ -114,7 +98,6 @@ export class NetworkOps {
       return errorObject.data
     }
   }
-
   delete = async (url, datass, options) => {
     try {
       const res = await axios.delete(urlFor(url), {
@@ -133,7 +116,7 @@ export class NetworkOps {
     } catch (error) {
 
       const { response } = error
-      const { ...errorObject } = response // take everything but 'request'
+      const { ...errorObject } = response
       this.handleError(errorObject.data)
       return errorObject.data
     }
@@ -141,7 +124,6 @@ export class NetworkOps {
   }
 
 }
-
 
 const networkOpsInstance = new NetworkOps();
 
