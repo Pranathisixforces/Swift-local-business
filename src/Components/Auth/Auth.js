@@ -39,7 +39,6 @@ let dispatch=useDispatch();
     }
 }
 
-console.log(isValid,'isss')
 const onChangeEmail = (e) => {
     let reg = /^(\+?1[-. ]?)?\(?[2-9][0-8][0-9]\)?[-. ]?[2-9][0-9]{2}[-. ]?[0-9]{4}$|^[\w+.]+@\w+\.\w+$/;
     if(reg.test(e.target.value)){setisvalid(true)}
