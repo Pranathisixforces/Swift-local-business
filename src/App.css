@@ -11,3 +11,38 @@
 color: red;
 }
 
+.phoneInput .PhoneInput{
+  width: 61%;
+  margin-left: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.phoneInput .PhoneInputCountry{
+  min-width: 20%;
+  height: 52px;
+  border: 1px solid lightgray;
+  justify-content: center;
+  border-radius:4px;
+}
+.phoneInput .PhoneInputInput{
+  min-width: 79%;
+  height: 37px;
+  border-radius:4px;
+  padding: 8px 12px;
+  font-weight: 400;
+  font-size: 16px;
+  color: #787373;
+  border:1px solid lightgray;
+
+}
+.phoneInput .PhoneInputInput:focus{
+  border:1px solid #007bff;
+}
+.phoneInput .PhoneInputCountryIcon{
+  width: 2rem;
+  height: 1.5rem;
+  }
+
+  .phoneInput .errorbox{
+  border:1px solid red
+  }

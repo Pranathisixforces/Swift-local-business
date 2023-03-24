@@ -81,19 +81,24 @@ null}
 export default Auth
 
 const Left =styled.div`
-margin-top:150px;
+width:600px;
+padding-left:200px;
+display:flex;
+flex-direction:column;
+justify-content:center;
 `
 const Image=styled.img`
-width:13%;
-margin-bottom:60px;
+width:40%;
+margin-bottom:40px;
+margin-left:40px;
 `
 const Inputbox=styled(TextField)`
-width:30%;
+width:60%;
 border-radius:12px;
-height:80px;
+height:50px;
 `
 const CustomButton=styled(Button)`
-width:30%;
+width:60%;
 height:44px;
 `
 // const Haveaccount=styled.p`

@@ -3,14 +3,37 @@ import NetworkOps from "../../services/NetworkOps";
 import { ServiceEnum } from "../../services/Urls";
 
 
-export const registerUser=(data)=>async (dispatch,getstate)=>{
+export const registerUser=(data)=>async (dispatch)=>{
     const res=await NetworkOps.post(ServiceEnum.register,data)
-    console.log(res,'ress')
         if(res.status===true)
         {
         localStorage.setItem('token', res?.token)
         dispatch({
             type: 'USERID',
+            payload:res?.data
+          })
+        }
+    return res
+}
+export const displaynumber=(data)=>async (dispatch)=>{
+    const res=await NetworkOps.post(ServiceEnum.displayNumber,data)
+    console.log(res,'ress')
+        if(res.status===true)
+        {
+        dispatch({
+            type: 'DISPNUMBER',
+            payload:res?.data
+          })
+        }
+    return res
+}
+export const buynumber=(data)=>async (dispatch)=>{
+    const res=await NetworkOps.post(ServiceEnum.buyNumber,data)
+    console.log(res,'ress')
+        if(res.status===true)
+        {
+        dispatch({
+            type: 'BUYNUMBER',
             payload:res?.data
           })
         }

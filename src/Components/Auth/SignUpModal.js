@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import SignUp from "./SignUp";
 import styled from "styled-components";
 import Dialog from '@mui/material/Dialog';
 import CloseIcon from '@mui/icons-material/Close';
 import signpic from '../../assets/signup.png';
+import BuyNumber from "./BuyNumber";
 
 function SignUpModal(props){
+    const [buy,setBuy]=useState(false)
+
     const handleClose = () => {
         props.setOpen(false);
       };
@@ -16,7 +19,9 @@ return(
         onClose={()=>handleClose()}
         >
             <Dialougediv>
-            <SignUp/>
+            {buy===true?<BuyNumber/>:
+            <SignUp setBuy={setBuy}/>
+             }
             <Right>
              <CloseIcondiv>
               <CloseIcon onClick={()=>handleClose()} />
