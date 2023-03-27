@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import StripeCheckout from 'react-stripe-checkout';
-import { getpaymentIntent } from '../store/Actions/Auth.action';
 
 const PaymentPage = () => {
   const [paymentComplete, setPaymentComplete] = useState(false);
@@ -19,7 +18,7 @@ let dispatch=useDispatch()
     <div>
       {!paymentComplete && (
         <StripeCheckout
-          stripeKey='7sI0036Bgcf01he7sM'
+          stripeKey='pk_live_51KnIv3IP0V9hIrNScYkpMaRMBSzGwDekxHvEgBoXBo2iTlzOQ13rL927tddCs5JcnWMfVJeC6JJxRcrNtdKz70wY00DcDIUxhf'
           token={handleToken}
           amount={1000}
           currency="USD"
