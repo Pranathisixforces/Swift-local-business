@@ -1,6 +1,8 @@
 import './App.css';
 import React, {Suspense, lazy} from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+const PaymentPage =lazy(()=>import('./Pages/Payment'));
+const Dashboard =lazy(()=>import('./Pages/Dashboard'));
 const Header =lazy(()=>import("./Header"));
 const Footer =lazy(()=>import("./Footer"));
 const FooterBottom =lazy(()=>import("./FooterBottom"));
@@ -27,6 +29,8 @@ function App() {
         <Route path='/pricing' element={<Pricing/>}></Route>
         <Route path='/home-services' element={<HomeServices/>}></Route>
         <Route path='/professional-services' element={<ProffessionalServices/>}></Route>
+        <Route path='/dashboard' element={<Dashboard/>}></Route>
+        <Route path='/payment' element={<PaymentPage/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
       </Routes>
       {window.location.pathname !== '/login'?<>

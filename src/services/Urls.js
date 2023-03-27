@@ -5,7 +5,8 @@ export const ServiceEnum={
     register:"user/notify/signup",
     loginUser:'user/notify/login',
     displayNumber:'user/displayNumber',
-    buyNumber:'user/buyNumber'
+    buyNumber:'user/buyNumber',
+    stripePaymentIntent:'payment/paymentIntent',
 }
 
 export const urlFor =(services)=>{

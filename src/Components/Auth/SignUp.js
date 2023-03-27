@@ -47,6 +47,7 @@ const res = await dispatch(registerUser({
         }
         else if(res.status===true){
             props?.setBuy(true)
+            localStorage.setItem('email',email)
         }
 return res
 }

@@ -51,3 +51,10 @@ export const loginUsers=(data)=>async (dispatch,getstate)=>{
         }
 return res
 }
+
+export const getpaymentIntent=(value) => async (dispatch, getstate) => {
+    const res = await NetworkOps.post(`${ServiceEnum.stripePaymentIntent}`,value)
+    if (res.status === true) {
+    }
+    return res
+  }
